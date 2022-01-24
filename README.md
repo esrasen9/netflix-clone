@@ -3,10 +3,10 @@
 ## Demo Website
 <hr>
 
-### 👉🏻 Heroku: 
+### 👉🏻 Heroku: https://netflixclone-app.herokuapp.com
 
 ## Installation ⚡
-
+<hr>
 <ul>
 <li>
 Get a free API Key at ➡️ 
@@ -32,7 +32,8 @@ TheMovieDatabaseAPI
 </pre>
 </li>
 <li>
-Get your firebase config details by creating a free project on Firebase.
+Get your firebase config details by creating a free project on
+<a rel="stylesheet" href="https://firebase.google.com">Firebase</a>.
 </li>
 <br>
 <li>
@@ -50,18 +51,33 @@ const firebaseConfig = {
 </li>
 </ul>
 
-# Screenshots :camera_flash:
+## Screenshots :camera_flash:
+<hr>
 
 ![GitHub Logo](./src/screenshots/1.png)
 
+<hr>
+
 ![GitHub Logo](./src/screenshots/2.png)
+
+<hr>
 
 ![GitHub Logo](./src/screenshots/3.png)
 
+<hr>
+
 ![GitHub Logo](./src/screenshots/4.png)
+
+<hr>
 
 ![GitHub Logo](./src/screenshots/5.png)
 
+<hr>
+
 ![GitHub Logo](./src/screenshots/6.png)
 
+<hr>
+
 ![GitHub Logo](./src/screenshots/7.png)
+
+<hr>
