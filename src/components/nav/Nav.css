@@ -1,0 +1,62 @@
+.nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    height: 10vh;
+}
+
+.nav-logo, .nav-avatar {
+    padding: 20px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.nav-logo {
+    width: 190px;
+}
+
+.nav-avatar {
+    border: none;
+}
+
+.nav-avatar-img {
+    width: 68px;
+    height: 68px;
+}
+
+.nav-logout-button {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    margin: 10px;
+}
+
+.nav-logout-button:active {
+    outline: none;
+}
+
+.nav-user-links {
+    display: flex;
+    align-items: center;
+}
+
+.list-link {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: rgba(51, 51, 51, 0.2);
+    border-radius: 8px;
+}
+
+.list-link:hover {
+    background-color: rgba(51, 51, 51, 0.5);
+    transition: all 0.6s;
+}
+
+.list-link:focus {
+    background-color: #E50914;
+}

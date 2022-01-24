@@ -1,0 +1,111 @@
+.row {
+    margin-left: 20px;
+}
+
+.row-movies {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding: 20px;
+}
+
+.row-title {
+    margin-left: 10px;
+    padding: 20px;
+}
+
+.row-movies::-webkit-scrollbar {
+    display: none;
+}
+
+.poster-img {
+    cursor: pointer;
+    margin-right: 10px;
+    object-fit: contain;
+    max-height: 240px;
+    transition: transform 380ms;
+}
+
+.first-row-img {
+    max-height: 300px;
+}
+
+.poster-img:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.first-row-img:hover {
+    transform: scale(1.2);
+}
+
+.movie-details {
+    display: flex;
+    align-items: center;
+    height: 500px;
+}
+
+.movie-video-overview {
+    height: 460px;
+    width: 46%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    font-size: 1.1rem;
+    line-height: 28px;
+    letter-spacing: 1.1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.movie-overview-title {
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+    letter-spacing: 1.6px;
+    line-height: 40px;
+    margin-bottom: 30px;
+}
+
+.overview-text {
+    opacity: 0.7;
+}
+
+.overview-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.close-button {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    padding-bottom: 40px;
+    margin-top: -20px;
+}
+
+.react-player {
+    transition: all 0.7s ease-in-out;
+    border: none;
+    padding: 20px;
+}
+
+.my-list-button {
+    width: 30%;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    font-weight: 900;
+    font-size: 18px;
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin-right: 8px;
+    background-color: white;
+    color: black;
+}
+
+.my-list-button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: white;
+    transition: all 0.4s;
+}

@@ -1,0 +1,55 @@
+.sign-form {
+    z-index: 3;
+    position: absolute;
+    width: 80%;
+    height: 55%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.sign-input {
+    border-color: transparent;
+    border-radius: 2px;
+    width: 90%;
+    padding: 18px;
+    background-color: #333333;
+    font-size: 1.2rem;
+}
+
+.sign-input::placeholder {
+    color: white;
+    opacity: 0.6;
+}
+
+.sign-input:focus {
+    outline: none;
+    background-color: transparent;
+}
+
+.sign-button {
+    cursor: pointer;
+    padding: 18px;
+    border-radius: 2px;
+    border-color: transparent;
+    width: 90%;
+    background-color: #E50914;
+    font-size: 1.4rem;
+}
+
+.sign-in {
+    width: 90%;
+    padding: 16px 0;
+    font-size: 0.8rem;
+}
+
+.sign-in-button {
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    margin-left: 4px;
+}
