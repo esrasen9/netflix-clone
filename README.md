@@ -1,9 +1,9 @@
 # Netflix Clone With ReactJS 🍿🎬
 
-##Demo Website
+## Demo Website
 <hr>
 
-###👉🏻 Heroku: 
+### 👉🏻 Heroku: 
 
 ## Installation ⚡
 
