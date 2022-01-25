@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const BASE_YOUTUBE_URL = 'http://www.youtube.com/embed/';
+const BASE_YOUTUBE_URL = 'https://www.youtube.com/embed/';
 
 export default function BannerPlayModal() {
   const {
