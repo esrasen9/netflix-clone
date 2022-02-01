@@ -2,17 +2,16 @@ import React, { useEffect, useState } from 'react';
 import Iframe from 'react-iframe';
 import { AiOutlineClose } from 'react-icons/ai';
 import { useStateValue } from '../../Context';
+import { addToList, removeFromList } from '../listMethods';
 
 const BASE_YOUTUBE_URL = 'http://www.youtube.com/embed/';
 
 function MovieDetails({ videoId, clickedMovie, setTrailerYoutubeId }) {
-  const {
-    user, myList, handleAddToList, handleRemoveFromList,
-  } = useStateValue();
+  const { user, myList } = useStateValue();
   const [inMyList, setInMyList] = useState();
 
   const handleClick = () => {
-    inMyList ? handleRemoveFromList(clickedMovie) : handleAddToList(clickedMovie);
+    inMyList ? removeFromList(clickedMovie, myList, user) : addToList(clickedMovie, myList, user);
     setInMyList(!inMyList);
   };
 
@@ -45,7 +44,7 @@ function MovieDetails({ videoId, clickedMovie, setTrailerYoutubeId }) {
               />
             </button>
           </div>
-          <p className="overview-text">{clickedMovie.overview}</p>
+          <p className="overview-text">{clickedMovie?.overview}</p>
         </div>
         {
           user && (

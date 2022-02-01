@@ -1,7 +1,7 @@
 import React, {
   useContext, useEffect, useMemo, useState,
 } from 'react';
-import { doc, setDoc, onSnapshot } from 'firebase/firestore';
+import { doc, onSnapshot } from 'firebase/firestore';
 import { onAuthStateChanged, updateProfile } from 'firebase/auth';
 import { auth, db } from './firebase';
 import { requests, rowCategories } from './data';
@@ -20,24 +20,6 @@ function Provider(props) {
   const [user, setUser] = useState(null);
   const [myList, setMyList] = useState([]);
   const { children } = props;
-
-  const handleAddToList = (movie) => {
-    const movieRef = doc(db, 'mylist', user.uid);
-    if (!myList.includes(movie.id)) {
-      setDoc(movieRef, {
-        movies: [...myList, movie.id],
-      }, { merge: true })
-        .catch((error) => console.log(error.message));
-    }
-  };
-
-  const handleRemoveFromList = (movie) => {
-    const movieRef = doc(db, 'mylist', user.uid);
-    setDoc(movieRef, {
-      movies: myList.filter((id) => id !== movie.id),
-    }, { merge: true })
-      .catch((error) => console.log(error.message));
-  };
 
   const store = useMemo(() => ({
     requests,
@@ -59,8 +41,6 @@ function Provider(props) {
     setUser,
     myList,
     setMyList,
-    handleAddToList,
-    handleRemoveFromList,
   }), [openSignModal, openPlayModal, bannerYoutubeId, bannerMovie, username, user, myList]);
 
   useEffect(() => {

@@ -3,6 +3,7 @@ import Modal from '@material-ui/core/Modal';
 import { makeStyles } from '@material-ui/core/styles';
 import Iframe from 'react-iframe';
 import { useStateValue } from '../../Context';
+import { addToList, removeFromList } from '../listMethods';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -30,13 +31,14 @@ const BASE_YOUTUBE_URL = 'https://www.youtube.com/embed/';
 export default function BannerPlayModal() {
   const {
     openPlayModal, setOpenPlayModal, bannerYoutubeId,
-    bannerMovie, myList, handleAddToList, handleRemoveFromList,
+    bannerMovie, myList, user,
   } = useStateValue();
   const classes = useStyles();
   const [inMyList, setInMyList] = useState(myList.includes(bannerMovie?.id));
 
   const handleClick = () => {
-    inMyList ? handleRemoveFromList(bannerMovie) : handleAddToList(bannerMovie);
+    inMyList ? removeFromList(bannerMovie, user, myList)
+      : addToList(bannerMovie, user, myList);
     setInMyList(!inMyList);
   };
   return (
