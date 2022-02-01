@@ -36,7 +36,7 @@ function Provider(props) {
         }).catch((error) => alert(error.message));
       })
       .then(() => setOpenSignModal(false))
-      .catch((error) => alert(error.message));
+      .catch((error) => console.log(error.message));
   };
 
   const handleSignIn = (e) => {
@@ -47,7 +47,7 @@ function Provider(props) {
       e.target.password.value,
     )
       .then(() => setOpenSignModal(false))
-      .catch((error) => alert(error.message));
+      .catch((error) => console.log(error.message));
   };
 
   const handleAddToList = (movie) => {
@@ -56,7 +56,7 @@ function Provider(props) {
       setDoc(movieRef, {
         movies: [...myList, movie.id],
       }, { merge: true })
-        .catch((error) => alert(error.message));
+        .catch((error) => console.log(error.message));
     }
   };
 
@@ -65,7 +65,7 @@ function Provider(props) {
     setDoc(movieRef, {
       movies: myList.filter((id) => id !== movie.id),
     }, { merge: true })
-      .catch((error) => alert(error.message));
+      .catch((error) => console.log(error.message));
   };
 
   const store = useMemo(() => ({
@@ -101,7 +101,7 @@ function Provider(props) {
         if (!authUser.displayName) {
           updateProfile(authUser.user, {
             displayName: username,
-          }).catch((error) => alert(error.message));
+          }).catch((error) => console.log(error.message));
         }
       } else {
         setUser(null);
