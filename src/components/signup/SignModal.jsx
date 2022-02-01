@@ -3,7 +3,7 @@ import Modal from '@material-ui/core/Modal';
 import { makeStyles } from '@material-ui/core/styles';
 import { useStateValue } from '../../Context';
 import SignForm from './SignForm';
-import './SignUp.css';
+import './Sign.css';
 
 const useStyles = makeStyles((theme) => ({
   paper: {

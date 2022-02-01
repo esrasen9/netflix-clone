@@ -3,9 +3,9 @@ import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { useStateValue } from '../../Context';
 import { auth } from '../../firebase';
 
-function SignUp() {
+function SignUp({ setIsSignUp }) {
   const {
-    username, setOpenSignModal, setIsSignUp, setUsername,
+    username, setOpenSignModal, setUsername,
   } = useStateValue();
 
   const handleSignUp = (e) => {
@@ -25,7 +25,7 @@ function SignUp() {
   };
 
   return (
-    <form onSubmit={handleSignUp}>
+    <form onSubmit={handleSignUp} className="sign-form">
       <h1>Sign Up</h1>
       <input
         className="sign-input"
@@ -35,6 +35,8 @@ function SignUp() {
         value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
+      <input className="sign-input" placeholder="Email address" name="email" type="email" />
+      <input className="sign-input" placeholder="Password" name="password" type="password" />
       <button className="sign-button" type="submit">Sign Up</button>
       <div className="sign-in">
         You are already have an account?

@@ -18,7 +18,7 @@ function SignUp() {
   };
 
   return (
-    <form onSubmit={handleSignIn}>
+    <form onSubmit={handleSignIn} className="sign-form">
       <h1>Sign In</h1>
       <input className="sign-input" placeholder="Email address" name="email" type="email" />
       <input className="sign-input" placeholder="Password" name="password" type="password" />

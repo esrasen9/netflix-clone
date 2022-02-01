@@ -2,9 +2,7 @@ import React, {
   useContext, useEffect, useMemo, useState,
 } from 'react';
 import { doc, setDoc, onSnapshot } from 'firebase/firestore';
-import {
-  createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, updateProfile,
-} from 'firebase/auth';
+import { onAuthStateChanged, updateProfile } from 'firebase/auth';
 import { auth, db } from './firebase';
 import { requests, rowCategories } from './data';
 
@@ -22,33 +20,6 @@ function Provider(props) {
   const [user, setUser] = useState(null);
   const [myList, setMyList] = useState([]);
   const { children } = props;
-
-  const handleSignUp = (e) => {
-    e.preventDefault();
-    createUserWithEmailAndPassword(
-      auth,
-      e.target.email.value,
-      e.target.password.value,
-    )
-      .then((authUser) => {
-        updateProfile(authUser.user, {
-          displayName: username,
-        }).catch((error) => alert(error.message));
-      })
-      .then(() => setOpenSignModal(false))
-      .catch((error) => console.log(error.message));
-  };
-
-  const handleSignIn = (e) => {
-    e.preventDefault();
-    signInWithEmailAndPassword(
-      auth,
-      e.target.email.value,
-      e.target.password.value,
-    )
-      .then(() => setOpenSignModal(false))
-      .catch((error) => console.log(error.message));
-  };
 
   const handleAddToList = (movie) => {
     const movieRef = doc(db, 'mylist', user.uid);
@@ -90,8 +61,6 @@ function Provider(props) {
     setMyList,
     handleAddToList,
     handleRemoveFromList,
-    handleSignUp,
-    handleSignIn,
   }), [openSignModal, openPlayModal, bannerYoutubeId, bannerMovie, username, user, myList]);
 
   useEffect(() => {
